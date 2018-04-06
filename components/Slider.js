@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 import SlideOne from './SlideOne';
 import SlideTwo from './SlideTwo';
 import SlideThree from './SlideThree';
+import RightArrow from './RightArrow';
+import LeftArrow from './LeftArrow';
 
 
 export default class Slider extends Component {
