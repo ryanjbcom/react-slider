@@ -15,7 +15,15 @@ export default class Slider extends Component {
 		this.state = {
 			slideCount: 1 
 		}
+
+		/* change slides/click event */
+		this.nextSlide = this.nextSlide.bind(this);
+		this.previousSlide = this..previousSlide.bind(this);
+
+
 	}
+
+
 
 	render() {
 		return (
@@ -26,8 +34,22 @@ export default class Slider extends Component {
 			{ this.state.slideCount === 2 ? <SlideTwo /> : null }
 			{ this.state.slideCount === 3 ? <SlideThree /> : null }
 
+			/* Arrow functionality to match /click event */
+			<RightArrow nextSlide={this.nextSlide} />
+			<LeftArrow previousSlife={this.previousSlide} />
+
 			</div>
 		);
 	}
+
+
+	/* functions for the /click event */
+	nextSlide() {
+		this.setState({ slideCount: this.state.slideCount + 1  })
+	}
+
+	previousSlide() {
+		this.setState({ slideCount: this.state.slideCount + 1 })
+	}	
 
 }
